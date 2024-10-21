@@ -33,7 +33,7 @@ common_data:
       rev: a36260c04230d24a3819ae26e41f88de459776c9
     - type: git
       url: "https://github.com/xen-troops/meta-xt-prod-devel-rcar-gen4.git"
-      rev: spider-1.3.2
+      rev: spider-1.3.2+4.19
 
   # Sources to be used in DomD and DomU
   domd_domu_sources: &DOMD_DOMU_SOURCES
@@ -113,6 +113,10 @@ components:
         # Do not install kernel image to rootfs to decrease initrd size
         - ["RDEPENDS:${KERNEL_PACKAGE_NAME}-base", ""]
 
+        - [PREFERRED_VERSION_xen-tools, "4.20.0+git%"]
+        - [PREFERRED_VERSION_xen, "4.20.0+git%"]
+
+
       layers:
         - "../meta-virtualization"
         - "../meta-openembedded/meta-oe"
@@ -155,6 +159,8 @@ components:
         - [IMAGE_INSTALL:append, " smcroute"]
         - [IMAGE_INSTALL:append, " snort"]
         - [EXTRA_IMAGEDEPENDS:append, " boot-script"]
+        - [PREFERRED_VERSION_xen-tools, "4.19.0+git%"]
+        - [PREFERRED_VERSION_xen, "4.19.0+git%"]
 
       build_target: rcar-image-minimal
       layers:
