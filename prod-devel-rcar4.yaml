@@ -126,7 +126,7 @@ components:
         - "../meta-xt-rcar/meta-xt-gateway/meta-xt-dom0-gen4"
         - "../../layers/meta-xt-dom0-gen4"
         - "../../layers/meta-xt-domx-gen4"
-      build_target: core-image-thin-initramfs
+      build_target: core-image-minimal-initramfs
       external_src:
         domd: "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/"
       additional_deps:
@@ -248,7 +248,7 @@ images:
         size: 128 MiB
         items:
           "Image": "%{YOCTOS_WORK_DIR}/%{DOM0_BUILD_DIR}/tmp/deploy/images/generic-armv8-xt/Image"
-          "uInitramfs": "%{YOCTOS_WORK_DIR}/%{DOM0_BUILD_DIR}/tmp/deploy/images/generic-armv8-xt/uInitramfs"
+          "uInitramfs": "%{YOCTOS_WORK_DIR}/%{DOM0_BUILD_DIR}/tmp/deploy/images/generic-armv8-xt/core-image-minimal-initramfs-generic-armv8-xt.cpio.gz"
           "xen": "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/xen-%{MACHINE}.uImage"
           "xenpolicy": "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/xenpolicy-%{MACHINE}"
           "xen.dtb": "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/%{XT_XEN_DTB_NAME}"
