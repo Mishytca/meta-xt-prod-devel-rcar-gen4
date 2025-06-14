@@ -220,16 +220,31 @@ components:
       target_images:
         - "tmp/deploy/images/%{MACHINE}/Image"
         - "tmp/deploy/images/%{MACHINE}/%{BUILD_TARGET_DOMU}-%{MACHINE}.rootfs.ext4"
-  boot_artifacts:
+  boot_artifacts_spider:
     build-dir: "artifacts"
     builder:
       type: archive
-      name: "s4-%{MACHINE}-boot-artifacts.tar.bz"
+      name: "s4-spider-boot-artifacts.tar.bz"
       items:
         - "%{YOCTOS_WORK_DIR}/%{DOM0_BUILD_DIR}/tmp/deploy/images/generic-armv8-xt/Image"
         - "%{YOCTOS_WORK_DIR}/%{DOM0_BUILD_DIR}/tmp/deploy/images/generic-armv8-xt/uInitramfs"
         - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/bl31-%{MACHINE}.srec"
         - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/optee/tee-%{MACHINE}.srec"
+        - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/u-boot-elf-%{MACHINE}.srec"
+        - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/xen-%{MACHINE}.uImage"
+        - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/xenpolicy-%{MACHINE}"
+        - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/%{XT_XEN_DTB_NAME}"
+        - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/boot-emmc.uImage"
+        - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/boot-tftp.uImage"
+  boot_artifacts_v4h:
+    build-dir: "artifacts"
+    builder:
+      type: archive
+      name: "s4-v4h-boot-artifacts.tar.bz"
+      items:
+        - "%{YOCTOS_WORK_DIR}/%{DOM0_BUILD_DIR}/tmp/deploy/images/generic-armv8-xt/Image"
+        - "%{YOCTOS_WORK_DIR}/%{DOM0_BUILD_DIR}/tmp/deploy/images/generic-armv8-xt/uInitramfs"
+        - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/bl31-%{MACHINE}.srec"
         - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/u-boot-elf-%{MACHINE}.srec"
         - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/xen-%{MACHINE}.uImage"
         - "%{YOCTOS_WORK_DIR}/%{DOMD_BUILD_DIR}/tmp/deploy/images/%{MACHINE}/xenpolicy-%{MACHINE}"
