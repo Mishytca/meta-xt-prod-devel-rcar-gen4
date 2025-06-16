@@ -179,7 +179,7 @@ components:
         - "tmp/deploy/images/%{MACHINE}/Image"
         - "tmp/deploy/images/%{MACHINE}/%{BUILD_TARGET_DOMD}-%{MACHINE}.rootfs.ext4"
         - "tmp/deploy/images/%{MACHINE}/bl31-%{MACHINE}.srec"
-        - "tmp/deploy/images/%{MACHINE}/tee-%{MACHINE}.srec"
+        - "tmp/deploy/images/%{MACHINE}/optee/tee-%{MACHINE}.srec"
         - "tmp/deploy/images/%{MACHINE}/u-boot-elf-%{MACHINE}.srec"
         - "tmp/deploy/images/%{MACHINE}/xen-%{MACHINE}.uImage"
         - "tmp/deploy/images/%{MACHINE}/xenpolicy-%{MACHINE}"
